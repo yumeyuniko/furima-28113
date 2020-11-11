@@ -15,7 +15,7 @@
 # :page_facing_up: DB設計
 
 ## ER図
-![er](https://gyazo.com/74b1f167872e0e5e4d44f46fd1c9570f/raw)
+![er](https://gyazo.com/d49d22a5734f49b656416799742189aa/raw)
 
 ## usersテーブル
 
@@ -43,7 +43,7 @@
 | :--- | :---: | ---: |
 | user_id | integer | null: false, foreign_key: true |
 | name | string | null:false |
-| explanation | string | null:false |
+| explanation | text | null:false |
 | category_id | integer | null:false |
 | condition_id | integer | null:false |
 | delivery_fee_id | integer | null:false |
