@@ -15,7 +15,7 @@
 # :page_facing_up: DB設計
 
 ## ER図
-![er](https://gyazo.com/64f6b786f2b929a546cd16fb82e5574f/raw)
+![er](https://gyazo.com/1edc19717e03ad243c4fbc34ffd3c53a/raw)
 
 ## usersテーブル
 
@@ -31,8 +31,8 @@
 | birthday | date| null:false |
 
 ### Association
- - has_many :item   
- - has_many :record
+ - has_many :items
+ - has_many :records
    
 
 
@@ -42,6 +42,8 @@
 | Column | Type | Options |
 | :--- | :---: | ---: |
 | user_id | references | null:false |
+| name | string | null:false |
+| explanation | string | null:false |
 | category_id | integer | null:false |
 | condition_id | integer | null:false |
 | delivery_fee_id | integer | null:false |
@@ -59,12 +61,12 @@
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
-| postal_code | integer(7) | null:false |
+| postal_code | string | null:false |
 | prefecture_id | integer | null:false |
 | city | string | null:false |
 | house_number | string | null:false |
 | building_name | string |  |
-| phone_number | integer | null:false |
+| phone_number | string | null:false |
 | record_id | references |  null: false, foreign_key: true |
  ### Association
 - belongs_to :record
