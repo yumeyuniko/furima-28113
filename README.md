@@ -15,7 +15,7 @@
 # :page_facing_up: DB設計
 
 ## ER図
-![er](https://gyazo.com/1edc19717e03ad243c4fbc34ffd3c53a/raw)
+![er](https://gyazo.com/74b1f167872e0e5e4d44f46fd1c9570f/raw)
 
 ## usersテーブル
 
@@ -41,7 +41,7 @@
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
-| user_id | references | null:false |
+| user_id | integer | null: false, foreign_key: true |
 | name | string | null:false |
 | explanation | string | null:false |
 | category_id | integer | null:false |
@@ -67,7 +67,7 @@
 | house_number | string | null:false |
 | building_name | string |  |
 | phone_number | string | null:false |
-| record_id | references |  null: false, foreign_key: true |
+| record_id | integer | null: false, foreign_key: true |
  ### Association
 - belongs_to :record
      
@@ -79,8 +79,8 @@
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
-| user_id | references |  null: false, foreign_key: true |
-| item_id | references |  null: false, foreign_key: true |
+| user_id | integer |  null: false, foreign_key: true |
+| item_id | integer |  null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
