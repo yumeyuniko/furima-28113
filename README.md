@@ -26,9 +26,9 @@
 | encrypted_password | string | null:false |
 | first_name | string | null:false |
 | last_name | string | null:false |
-| first_name_ruby | string | null:false |
-| last_name_ruby | string | null:false |
-| birthday | string | null:false |
+| first_name_kana | string | null:false |
+| last_name_kana | string | null:false |
+| birthday | date| null:false |
 
 ### Association
  - has_many :item   
@@ -42,13 +42,13 @@
 | Column | Type | Options |
 | :--- | :---: | ---: |
 | user_id | references | null:false |
-| category | string | null:false |
-| condition | string | null:false |
-| delivery_fee | integer | null:false |
-| shipping_area | string | null:false |
-| shipping_day | string | null:false |
+| category_id | integer | null:false |
+| condition_id | integer | null:false |
+| delivery_fee_id | integer | null:false |
+| prefecture_id | integer | null:false |
+| shipping_day_id | integer | null:false |
 | price | integer | null:false |
-| favorite |  |  |
+
  ### Association
  - belongs_to :user
  - has_one :record
@@ -60,11 +60,12 @@
 | Column | Type | Options |
 | :--- | :---: | ---: |
 | postal_code | integer(7) | null:false |
-| prefecture  | string | null:false |
+| prefecture_id | integer | null:false |
 | city | string | null:false |
 | house_number | string | null:false |
 | building_name | string |  |
 | phone_number | integer | null:false |
+| record_id | references |  null: false, foreign_key: true |
  ### Association
 - belongs_to :record
      
