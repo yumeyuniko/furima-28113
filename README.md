@@ -1,24 +1,88 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1 align="center"> Furimaアプリ</h1>
 
-Things you may want to cover:
+- メルカリクローンのフリーマーケットサイト
 
-* Ruby version
+- ![top_page](https://gyazo.com/a4db61709d44f73746dba48bafe0b8cf/raw)
 
-* System dependencies
 
-* Configuration
+## :paperclip: 主な使用言語
+<a><img src="images/../app/assets/images/ruby.png" width="70px;" /></a> <!-- rubyのロゴ -->
+<a><img src="images/../app/assets/images/rails.png" width="200px;" /></a> <!-- railsロゴ -->
 
-* Database creation
+<br>
 
-* Database initialization
+# :page_facing_up: DB設計
 
-* How to run the test suite
+## ER図
+![er](https://gyazo.com/d49d22a5734f49b656416799742189aa/raw)
 
-* Services (job queues, cache servers, search engines, etc.)
+## usersテーブル
 
-* Deployment instructions
+| Column | Type | Options |
+| :--- | :---: | ---: |
+| nickname | string | null:false |
+| email | string | null:false　unique:true |
+| encrypted_password | string | null:false |
+| first_name | string | null:false |
+| last_name | string | null:false |
+| first_name_kana | string | null:false |
+| last_name_kana | string | null:false |
+| birthday | date| null:false |
 
-* ...
+### Association
+ - has_many :items
+ - has_many :records
+   
+
+
+
+## itemsテーブル
+
+| Column | Type | Options |
+| :--- | :---: | ---: |
+| user_id | integer | null: false, foreign_key: true |
+| name | string | null:false |
+| explanation | text | null:false |
+| category_id | integer | null:false |
+| condition_id | integer | null:false |
+| delivery_fee_id | integer | null:false |
+| prefecture_id | integer | null:false |
+| shipping_day_id | integer | null:false |
+| price | integer | null:false |
+
+ ### Association
+ - belongs_to :user
+ - has_one :record
+
+
+
+## delivery_destinationsテーブル
+
+| Column | Type | Options |
+| :--- | :---: | ---: |
+| postal_code | string | null:false |
+| prefecture_id | integer | null:false |
+| city | string | null:false |
+| house_number | string | null:false |
+| building_name | string |  |
+| phone_number | string | null:false |
+| record_id | integer | null: false, foreign_key: true |
+ ### Association
+- belongs_to :record
+     
+
+
+
+
+## recordsテーブル
+
+| Column | Type | Options |
+| :--- | :---: | ---: |
+| user_id | integer |  null: false, foreign_key: true |
+| item_id | integer |  null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :item
+- has_one :delivery_destination
