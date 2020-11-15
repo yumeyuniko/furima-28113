@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
-  def index
-    @items = Item.all
-    flash[:notice] = "ログイン済ユーザーのみ出品できます" unless user_signed_in?
-  end
+  # def index
+  #   @items = Item.all
+  #   flash[:notice] = "ログイン済ユーザーのみ出品できます" unless user_signed_in?
+  # end
 
   def new
     @item = Item.new
@@ -22,13 +22,13 @@ class ItemsController < ApplicationController
   end
 
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    @item.update(item_params)
-    redirect_to root_path
-  end
+  # def update
+  #   @item.update(item_params)
+  #   redirect_to root_path
+  # end
 
 
 

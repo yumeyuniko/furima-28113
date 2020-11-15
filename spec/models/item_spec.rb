@@ -14,6 +14,13 @@ describe Item, type: :model do
     end
   
 
+    it "商品画像がないと出品できない" do
+      @item.image = nil
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Image can't be blank")
+    end
+
+
     it "商品名がないと出品できない" do
       @item.name = ""
       @item.valid?
@@ -66,6 +73,13 @@ describe Item, type: :model do
       @item.shipping_day_id = 0
       @item.valid?
       expect(@item.errors.full_messages).to include("Shipping day must be other than 0")
+    end
+
+
+    it "配送料負担--を選ぶと出品できない" do
+      @item.delivery_fee_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
     end
 
     it "金額が入ってないと出品できない" do
