@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit ,:destroy]
+  before_action only: :show
 
   def index
-    @items = Item.all
     @items = Item.includes(:user).order("created_at DESC")
     # flash[:notice] = "ログイン済ユーザーのみ出品できます" unless user_signed_in?
   end
@@ -22,14 +22,21 @@ class ItemsController < ApplicationController
     end
   end
 
-
-  # def edit
+  # def destroy
+  #   item = Item.find(params[:id])
+  #   item.destroy
   # end
 
-  # def update
-  #   @item.update(item_params)
-  #   redirect_to root_path
-  # end
+  def edit
+  end
+
+  def update
+  end
+
+
+  def show
+    @item = Item.find(params[:id])
+  end
 
 
 
