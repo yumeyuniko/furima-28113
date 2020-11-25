@@ -15,7 +15,7 @@
 # :page_facing_up: DB設計
 
 ## ER図
-![er](https://gyazo.com/d49d22a5734f49b656416799742189aa/raw)
+[![Image from Gyazo](https://i.gyazo.com/6fab291bc9deb37fda9975858c73f813.png)](https://gyazo.com/6fab291bc9deb37fda9975858c73f813)
 
 ## usersテーブル
 
