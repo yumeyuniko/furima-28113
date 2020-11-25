@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
     end
   end
   
-
   def new
   end
 
