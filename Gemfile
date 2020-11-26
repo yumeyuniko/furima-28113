@@ -66,3 +66,4 @@ gem 'devise'
 gem 'active_hash'
 gem 'mini_magick'
 gem 'payjp'
+gem "aws-sdk-s3", require: false
