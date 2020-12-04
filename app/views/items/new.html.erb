@@ -5,7 +5,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with model: @item, local: true do |f| %>
+    <%= form_with model: @item, url: items_path, local: true do |f| %>
 
     
     <%= render 'shared/error_messages', model: f.object %>
@@ -24,6 +24,7 @@
       </div>
     </div>
     <%# /出品画像 %>
+
     <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
@@ -31,6 +32,9 @@
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+
+
+
       <div class="items-explain">
         <div class="weight-bold-text">
           商品の説明
@@ -40,6 +44,21 @@
       </div>
     </div>
     <%# /商品名と商品説明 %>
+
+    <%# /タグ付機能 %>
+    
+      <div class="tag-name">
+      <div class="weight-bold-text">
+        <%= f.label :tag_name, "タグを付けると商品を見つけやすくなります"%>
+        </div>
+        <%= f.text_field :tag_name, class:"items-text", id: 'items_tag_name', placeholder:"(100文字まで)", maxlength:"100" %>
+        </div>
+      <div id="search-result">
+      </div>
+
+
+
+
 
     <%# 商品の詳細 %>
     <div class="items-detail">
