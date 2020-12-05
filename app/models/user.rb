@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :sns_credentials
+  has_many :comments  # commentsテーブルとのアソシエーション
 
 
   
