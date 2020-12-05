@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+
   def create
     @item = ItemsTag.new(item_params)
     if @item.valid?
@@ -29,6 +30,7 @@ class ItemsController < ApplicationController
   def edit
   end
 
+
   def update
     @item.update(item_params)
     if @item.valid?
@@ -41,6 +43,8 @@ class ItemsController < ApplicationController
 
 
   def show
+    @comments = @item.comments.includes(:user)
+    @comment = Comment.new
   end
 
   def search
@@ -48,6 +52,9 @@ class ItemsController < ApplicationController
     tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"] )
     render json:{ keyword: tag }
   end
+
+
+
 
 
   private
