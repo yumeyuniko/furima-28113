@@ -90,6 +90,10 @@
 }
 
 /* /出品画像 */
+img#img-size {
+  width: 80%; 
+  padding: 20px;
+}
 
 /* 商品名と商品説明 */
 .new-items {
@@ -227,3 +231,4 @@
 .inc {
   font-size: 13px;
 }
+
