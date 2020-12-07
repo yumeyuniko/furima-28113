@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  has_many :items
-  has_many :sns_credentials
-  has_many :comments  # commentsテーブルとのアソシエーション
+  has_many :items, dependent: :destroy
+  has_many :sns_credentials, dependent: :destroy
+  has_many :comments, dependent: :destroy  # commentsテーブルとのアソシエーション
 
 
   

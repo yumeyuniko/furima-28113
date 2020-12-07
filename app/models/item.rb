@@ -2,8 +2,10 @@ class Item < ApplicationRecord
     belongs_to :user
     has_one_attached :image
     has_one :record
-    has_many :item_tag_relations
-    has_many :tags, through: :item_tag_relations
+    has_many :item_tag_relations,dependent: :destroy
+
+    has_many :tags, through: :item_tag_relations,dependent: :destroy
+
 
     extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to :category
@@ -12,7 +14,8 @@ class Item < ApplicationRecord
     belongs_to :prefecture
     belongs_to :shipping_day
     
-    has_many :comments  # commentsテーブルとのアソシエーション
+    has_many :comments, dependent: :destroy
+    # commentsテーブルとのアソシエーション
 
 
     with_options presence: true do
