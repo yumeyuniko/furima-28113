@@ -17,87 +17,87 @@ describe Item, type: :model do
     it "商品画像がないと出品できない" do
       @item.image = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include("Image can't be blank")
+      expect(@item.errors.full_messages).to include("Imageを入力してください")
     end
 
 
     it "商品名がないと出品できない" do
       @item.name = ""
       @item.valid?
-      expect(@item.errors.full_messages).to include("Name can't be blank")
+      expect(@item.errors.full_messages).to include("Nameを入力してください")
     end
 
 
     it "商品名が41文字以上だと出品できない" do
       @item.name = "a" * 41
       @item.valid?
-      expect(@item.errors.full_messages).to include("Name is too long (maximum is 40 characters)")
+      expect(@item.errors.full_messages).to include("Nameは40文字以内で入力してください")
     end
 
 
     it "商品説明がないと出品できない" do
       @item.explanation = ""
       @item.valid?
-      expect(@item.errors.full_messages).to include("Explanation can't be blank")
+      expect(@item.errors.full_messages).to include("Explanationを入力してください")
     end
 
 
     it "商品説明が1001文字以上だと出品できない" do
       @item.explanation = "a" * 1001
       @item.valid?
-      expect(@item.errors.full_messages).to include("Explanation is too long (maximum is 1000 characters)")
+      expect(@item.errors.full_messages).to include("Explanationは1000文字以内で入力してください")
     end
 
 
 
     it "カテゴリ--を選ぶと出品できない" do
-      @item.category_id = 1
+      @item.category_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category must be other than 1")
+      expect(@item.errors.full_messages).to include("Categoryは0以外の値にしてください")
     end
 
     it "商品状態--を選ぶと出品できない" do
-      @item.condition_id = 1
+      @item.condition_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Condition must be other than 1")
+      expect(@item.errors.full_messages).to include("Conditionは0以外の値にしてください")
     end
 
 
     it "都道府県--を選ぶと出品できない" do
       @item.prefecture_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Prefecture must be other than 0")
+      expect(@item.errors.full_messages).to include("Prefectureは0以外の値にしてください")
     end
 
     it "発送日数--を選ぶと出品できない" do
       @item.shipping_day_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Shipping day must be other than 0")
+      expect(@item.errors.full_messages).to include("Shipping dayは0以外の値にしてください")
     end
 
 
     it "配送料負担--を選ぶと出品できない" do
-      @item.delivery_fee_id = 1
+      @item.delivery_fee_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
+      expect(@item.errors.full_messages).to include("Delivery feeは0以外の値にしてください")
     end
 
     it "金額が入ってないと出品できない" do
       @item.price = "あああ"
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is not a number")
+      expect(@item.errors.full_messages).to include("Priceは数値で入力してください")
     end
 
     it "商品価格が299円以下だと出品できない" do
       @item.price = 299
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+      expect(@item.errors.full_messages).to include("Priceは300以上の値にしてください")
     end
 
     it "商品価格が10000000円以上だと出品できない" do
       @item.price = 10000000
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+      expect(@item.errors.full_messages).to include("Priceは9999999以下の値にしてください")
     end
   end
 end

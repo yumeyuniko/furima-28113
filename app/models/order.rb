@@ -7,12 +7,12 @@ class Order
 
   with_options presence: true do
     # 郵便番号に関するバリデーション
-    validates :postal_code, format: {with:/\A\d{3}[-]\d{4}\z/, message: " input correctly"}
+    validates :postal_code, format: {with:/\A\d{3}[-]\d{4}\z/}
     # 都道府県に関するバリデーション
-    validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
+    validates :prefecture_id, numericality: { other_than: 0}
     validates :city
     validates :house_number
-    validates :phone_number, format: {with: /\A[0-9]+\z/, message: "input only number"}
+    validates :phone_number, format: {with: /\A[0-9]+\z/}
 
     validates :token
   end
