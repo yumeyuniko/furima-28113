@@ -9,7 +9,7 @@ a {
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('furima-header01.png');
+  background-image: image-url('mane-header01.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -22,13 +22,19 @@ a {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
+.top-logo{
+  width: 80%;
+}
+
 .service-title {
   font-size: 8vh;
+  margin: 0 auto;
 }
 
 .service-explain {
   font-size: 2.5vh;
   line-height: 40px;
+  margin: 0 auto;
 }
 
 .store-btn {
@@ -99,7 +105,7 @@ a {
   font-size: 30px;
   text-align: center;
   line-height: 60px;
-  background-color: #3ccace;
+  background-color: #e4007f;
   color: #fff;
 }
 
