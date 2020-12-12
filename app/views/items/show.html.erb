@@ -102,12 +102,16 @@
         <span>コメントする<span>
      <% end %>
     <% end %>
+
       <div id='comments'>
-        <% @comments.reverse_each do |comment| %>
-          <p><%= comment.text %></p>
+        <% @comments.reverse_each do |comment| %> 
+        <p><%= comment.user.nickname %><br><%= comment.text %></p>
         <% end %>
       </div>
+
     </div>
+
+    
 
 
 
