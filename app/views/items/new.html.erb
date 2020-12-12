@@ -31,9 +31,8 @@
         商品名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
-
-
+      <%= f.text_field :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+    
 
       <div class="items-explain">
         <div class="weight-bold-text">
@@ -51,7 +50,7 @@
       <div class="weight-bold-text">
         <%= f.label :tag_name, "タグを付けると商品を見つけやすくなります"%>
         </div>
-        <%= f.text_field :tag_name, class:"items-text", id: 'items_tag_name', placeholder:"(100文字まで)", maxlength:"100" %>
+        <%= f.text_field :tag_name, class:"items-text", id: 'items_tag_name', placeholder:"(20文字まで)", maxlength:"20" %>
         </div>
       <div id="search-result">
       </div>
