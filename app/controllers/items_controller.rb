@@ -7,6 +7,12 @@ class ItemsController < ApplicationController
     # flash[:notice] = "ログイン済ユーザーのみ出品できます" unless user_signed_in?
   end
 
+
+  def item_top
+    @items = Item.includes(:user).order("created_at DESC")
+  end
+
+
   def new
     @item = Item.new
   end

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Furima</title>
+  <title>Manecari</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<%= breadcrumbs separator: " &rsaquo; " %>
   <%= yield %>
 </body>
 

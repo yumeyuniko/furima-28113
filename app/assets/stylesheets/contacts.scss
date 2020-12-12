@@ -1,0 +1,176 @@
+// /* テキストの自動拡大を無効化 */
+// body {
+// 	-webkit-text-size-adjust: none;
+// 	text-size-adjust: none;
+// }
+
+
+
+// /* 「コンテンツ」ブロック */
+// .contents {
+// 	background-color: #3ccace;
+// 	padding: 40px 15px;
+// }
+
+
+
+
+
+
+
+
+// /* 「お問い合わせ」ページ */
+// .comment input, textarea {
+//  width: 100%;
+ 
+//  padding: 10px;
+//  }
+
+//  input.name {
+//   width: 100%;
+// }
+
+//  input.mail {
+//   width: 100%;
+  
+// }
+
+// textarea {
+//  	height: 170px;
+//  }
+
+// input[type="submit"] {
+//  	background-color: #e4007f;
+//  	border: none;
+//  	-webkit-appearance: none;
+// }
+
+
+// /* ==== PC版 ==== */
+// @media (min-width: 600px) {
+
+// /* PC版：コンテナ */
+// .container {
+// 	max-width: 800px;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// }
+
+// /* PC版：「ヘッダー」ブロック内のコンテナ */
+// header .container {
+// 	display: flex;
+// 	justify-content: space-between;
+// }
+
+// /* PC版：記事 */
+// article {
+// 	padding-left: 60px;
+// 	padding-right: 60px;
+// }
+
+
+
+
+
+// /* ==== PC版（大） ==== */
+// @media (min-width: 1025px) {
+
+// /* PC版（大）：コンテナ */
+// .container {
+// 	max-width: 1100px;
+// }
+
+// /* PC版（大）：「コンテンツ」ブロック内のコンテナ */
+// .contents .container {
+// 	display: flex;
+// 	justify-content: space-between;
+// }
+// }}
+
+
+/* ------------------ */
+/* form
+/* ------------------ */
+.form-wrapper{
+  padding: 100px 0 80px;
+}
+
+.form-list{
+  max-width: 700px;
+  margin: 0 auto 80px;
+  padding: 0 50px;
+}
+
+.form-item{
+  margin-bottom: 25px;
+}
+
+.form-item:last-of-type{
+  margin-bottom: 0;
+}
+
+.form-label{
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,textarea{
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  border: 1px solid #141414;
+  color: #171717;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-text{
+  padding: 0 8px;
+  line-height: 30px;
+}
+
+textarea{
+  height: 170px;
+  padding: 0px 8px;
+  line-height: 30px;
+}
+.checkbox-list{
+  display: flex;
+}
+
+.checkbox-item{
+  margin-right: 20px;
+}
+
+.checkbox label,
+.checkbox{
+  cursor: pointer;
+}
+.checkbox{
+  border: 1px solid #282f35;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+
+.checkbox:checked{
+  background-color: #333;
+}
+
+.submit-btn {
+  display: block;
+  width: 235px;
+  line-height: 60px;
+  margin: 0 auto 70px;
+  background-color: #3ccace;
+  box-shadow: 0 0 2px #1B1310;
+  border-radius: 30px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: .3s;
+  border: none;
+}

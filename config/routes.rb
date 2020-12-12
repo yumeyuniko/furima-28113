@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'comments/new'
+  # get 'comments/new'
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
@@ -12,8 +12,20 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+
     
 
     resources :orders, only: [:index, :new, :create]
   end
+
+  get 'contacts/index'
+  #コンタクト
+
+  get 'item_top', to: "items#item_top"
+  #商品一覧
+
+  get 'edit_item_path', to: "items#edit"
+  #商品出品
+
+
 end

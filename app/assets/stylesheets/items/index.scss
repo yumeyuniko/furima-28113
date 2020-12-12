@@ -266,6 +266,11 @@ a {
   height: 33vh;
 }
 
+input#item-image {
+  border-style: none;
+}
+
+
 .sold-out {
   position: absolute;
   top: 40%;
@@ -313,5 +318,7 @@ a {
 .star-count {
   font-size: 2vh;
 }
+
+
 
 /* //商品一覧 */

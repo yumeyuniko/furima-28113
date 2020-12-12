@@ -1,4 +1,5 @@
 <%= render "shared/header" %>
+<% breadcrumb :root %>
 <div class='main'>
 
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
@@ -122,6 +123,7 @@
   <%# /FURIMAの特徴 %>
 
   <%# 商品一覧 %>
+
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', items_path, class: "subtitle" %>
