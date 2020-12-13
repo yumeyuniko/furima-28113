@@ -25,53 +25,39 @@
 
 	 <% breadcrumb :contacts %> 
 
-
-    <!-- form -->
-    <div class="form-wrapper">
-    <%= form_for @contact, :url => contacts_confirm_path do |f| %>
+      <!-- form -->
+      <div class="form-wrapper">
         <ul class="form-list">
           <li class="form-item">
-         <label for="" class="form-label">お問い合わせ内容</label>
-        </li>
-
-        <% if @contact.errors.any? %>
-          <div class="alert alert-danger" role="alert">
-            <strong>入力内容にエラーがあります</strong>
-            <ul>
-              <% @contact.errors.each do |attr, msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-
+          <label for="" class="form-label">お問い合わせ内容</label>
+           <%= form_for @contact, :url => contacts_thanks_path do |f| %>
+        
           <li class="form-item">
           <label for="" class="form-label">お名前</label>
-          <%= f.text_field :name %>
-          </li>
+              <%= f.hidden_field :name %>
+              <%= @contact.name %>
+            </li>
 
-           <li class="form-item">
+          <li class="form-item">
            <label for="" class="form-label">メールアドレス</label>
-           <%= f.text_field :email %>
-          </li>
+            <td>
+              <%= f.hidden_field :email %>
+              <%= @contact.email %>
+            </li>
 
           <li class="form-item">
           <label for="" class="form-label">その他</label>
-          <%= f.text_area :message %>
-          </li>
-       </ul>
-    </div>
-
-
-
-
-
-      <%= f.submit '確認', class: 'submit-btn' %>
+              <%= f.hidden_field :message %>
+              <%= simple_format(@contact.message) %>
+               </li>
+           </ul>
+        </div>
+        
+        <%= f.submit '送信', :class => 'submit-btn' %>
       <% end %>
-    <!-- form -->
+      <!-- //form -->
 
-
-    <%= link_to(new_item_path, class: 'purchase-btn') do %>
+<%= link_to(new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
