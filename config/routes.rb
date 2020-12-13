@@ -18,7 +18,14 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :new, :create]
   end
 
+
+
+
+
+
   get 'contacts/index'
+  post 'contacts/confirm' => 'contacts#confirm'   # 確認画面
+  post 'contacts/thanks'  => 'contacts#thanks'    # 送信完了画面
   #コンタクト
 
   get 'item_top', to: "items#item_top"
@@ -26,6 +33,7 @@ Rails.application.routes.draw do
 
   get 'edit_item_path', to: "items#edit"
   #商品出品
+
 
 
 end
