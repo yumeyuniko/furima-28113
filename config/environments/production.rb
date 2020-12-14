@@ -124,4 +124,7 @@ Rails.application.configure do
   enable_starttls_auto:  true
 }
 
+ActionCable.server.config.disable_request_forgery_protection = true
+config.action_cable.url = 'ws://Elastic IP/cable'
+config.action_cable.allowed_request_origins = [ 'http://Elastic IP' ]  
 end
