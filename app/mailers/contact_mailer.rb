@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default from: ENV['GMAIL_ADRESS']   # 送信元アドレス
+  default from: "daigocafe22@gmail.com"   # 送信元アドレス
 
   def received_email(contact)
     @contact= contact
