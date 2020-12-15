@@ -3,7 +3,7 @@
 
 - メルカリクローンのフリーマーケットサイト
 
-- ![d390713e26def0c647798de90f3a5dc4](https://user-images.githubusercontent.com/67476247/99186133-8761b200-2791-11eb-885a-f7437f232710.gif)
+[![Image from Gyazo](https://i.gyazo.com/3f34889a9a0d994bff0343c306fb639b.gif)](https://gyazo.com/3f34889a9a0d994bff0343c306fb639b)
 
 ## :paperclip: 主な使用言語
 <a><img src="images/../app/assets/images/ruby.png" width="70px;" /></a> <!-- rubyのロゴ -->
@@ -14,7 +14,7 @@
 # :page_facing_up: DB設計
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/433134b8aa4b880fba3de5af77fe987f.png)](https://gyazo.com/433134b8aa4b880fba3de5af77fe987f)
+[![Image from Gyazo](https://i.gyazo.com/0ccc44629dd5ee466c92ae70cbbdd123.png)](https://gyazo.com/0ccc44629dd5ee466c92ae70cbbdd123)
 
 ## usersテーブル
 
