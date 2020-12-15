@@ -18,6 +18,47 @@
 ## ER図
 [![Image from Gyazo](https://i.gyazo.com/0ccc44629dd5ee466c92ae70cbbdd123.png)](https://gyazo.com/0ccc44629dd5ee466c92ae70cbbdd123)
 
+## ■ Summary
+
+
+## ■ Function
+
+* credit-card registration(PayJP)
+
+
+## ■ Language
+### server-side
+* Ruby 2.6.5
+* 
+### front-end
+
+
+## ■ Flamework
+* Ruby on Rails 6.0.0
+
+## ■ Database
+* MySQL 5.6.50
+
+## ■ Infrastructure
+* AWS EC2
+* AWS S3
+
+## ■ Deploy
+* automated deployment by capistrano
+
+
+|入力内容 | 備考 | 
+| :--- | :---: | 
+| フリマアプリのURL | http://52.196.164.12/ | 
+| Basic認証のIDとパスワード| ID:admin  / password:2222 | 
+| 出品者用のメールアドレスとパスワード| :e-mail: sample@gmail.com   :key:111aaa | 
+| 購入者用のメールアドレスとパスワード| :e-mail: sample1@gmail.com   :key:111aaa | 
+|購入用カードの番号・期限・セキュリティコード| カード番号 :4242424242424242 |  
+|セキュリティコード|CVC: 123|  
+|有効期限|登録時より未来|  
+
+
+
 ## usersテーブル
 
 | Column | Type | Options |
