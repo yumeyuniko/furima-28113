@@ -5,6 +5,7 @@
 
 
 <img src="images/../app/assets/images/manecari.gif" width="500px;" />
+<img src="images/../app/assets/images/manecari1.gif" width="500px;" />
 
 ## :paperclip: 主な使用言語
 <a><img src="images/../app/assets/images/ruby.png" width="70px;" /></a> <!-- rubyのロゴ -->
