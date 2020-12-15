@@ -3,7 +3,8 @@
 
 - メルカリクローンのフリーマーケットサイト
 
-[![Image from Gyazo](https://i.gyazo.com/3f34889a9a0d994bff0343c306fb639b.gif)](https://gyazo.com/3f34889a9a0d994bff0343c306fb639b)
+
+<img src="images/../app/assets/images/manecari.gif" width="500px;" />
 
 ## :paperclip: 主な使用言語
 <a><img src="images/../app/assets/images/ruby.png" width="70px;" /></a> <!-- rubyのロゴ -->
