@@ -24,11 +24,11 @@ class Item < ApplicationRecord
     validates :name,             length: { maximum: 40 }
     validates :explanation,      length: { maximum: 1000 }
     validates :category_id, :condition_id, :delivery_fee_id,
-                numericality: { other_than: 0 }
+                numericality: { other_than: 0, message: "を選択してください"  }
     validates :prefecture_id, :shipping_day_id,  
-                  numericality: { other_than: 0 }
+                  numericality: { other_than: 0, message: "を選択してください"  }
     validates :price, 
-               numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+               numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "を半角数字で入力してください"  }
     end
 
     # with_options ************ {*******} do

@@ -13,7 +13,7 @@ class ItemsTag
     validates :prefecture_id, :shipping_day_id,  
                   numericality: { other_than: 0, message: "を選択してください" }
     validates :price, 
-               numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "半角数字で入力してください" }
+               numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "を半角数字で入力してください" }
     end
   
 
