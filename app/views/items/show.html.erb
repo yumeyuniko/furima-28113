@@ -27,8 +27,11 @@
 
 
     <%# 出品者以外でかつ会員のみ商品購入のリンクを表示 %>
+    <%# 商品のrecord(購入履歴）がnilだったら以下すべて表示、
+    nilじゃない場合、それはつまり購入履歴がある場合は以下表示しない %>
     <%# 出品者だけに編集・削除ボタンが表示されている %>
     <% if user_signed_in? %>
+     <% if @item.record == nil %> 
       <% if current_user.id == @item.user_id %>
         <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %>
         <p class='or-text'>or</p>
@@ -39,6 +42,7 @@
         <%= link_to '購入画面に進む', item_orders_path(@item) ,class:"item-red-btn"%>
       <% end %>
     <% end %>
+   <% end %>
     <%# //商品が売れていない場合は購入ボタンを出す %>
     
 

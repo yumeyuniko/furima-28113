@@ -29,7 +29,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy 
-    @item.destroy if current_user.id == @item.user.id
+    @item.destroy if current_user.id == @item.user.id && @item.record == nil
+    #出品者だけが削除できる記述
+    #売れてる商品を削除しようとしたときにレコードが紐づいているために消せなかった
+    #売れている物に関しては、消せない仕様にした
+    #recordがnilは、購入履歴がない＝売れていない
+    #soldoutの商品はそのまま
+    #destroyアクションを修正することで、エラーハンドリングができた
     redirect_to root_path
   end
 
