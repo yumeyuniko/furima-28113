@@ -110,6 +110,7 @@
       <div id='comments'>
         <% @comments.reverse_each do |comment| %> 
         <p><%= comment.user.nickname %><br><%= comment.text %></p>
+        <%= link_to '削除', item_comment_path(comment.id), method: :delete, class: :comment_delete %>
         <% end %>
       </div>
 
