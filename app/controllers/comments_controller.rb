@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    comment = Comment.find(params[:item_id])
-    comment.destroy
-    redirect_to item_path
+    @comment = Comment.includes(:user).find(params[:id])
+    @comment.destroy if current_user.id == @comment.user.id
+    redirect_to item_path(params[:item_id]), notice: "削除しました"
   end
 
   private

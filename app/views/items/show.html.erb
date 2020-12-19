@@ -1,5 +1,5 @@
 <%= render "shared/header" %>
-
+<p id="notice"><%= notice %></p>
 <%# 商品の概要 %>
 <div class="item-show">
   <div class="item-box">
@@ -110,7 +110,9 @@
       <div id='comments'>
         <% @comments.reverse_each do |comment| %> 
         <p><%= comment.user.nickname %><br><%= comment.text %></p>
-        <%= link_to '削除', item_comment_path(comment.id), method: :delete, class: :comment_delete %>
+        <% if user_signed_in? && comment.user_id == current_user.id %>
+        <%= link_to '削除', item_comment_path(comment.item_id,comment.id), method: :delete, class: :comment_delete, data: { confirm: 'ほんとに消す?' }%>
+        <% end %>
         <% end %>
       </div>
 
