@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     #recordがnilは、購入履歴がない＝売れていない
     #soldoutの商品はそのまま
     #destroyアクションを修正することで、エラーハンドリングができた
-    redirect_to root_path
+    redirect_to root_path, notice: "商品削除しました"
   end
 
   def edit
