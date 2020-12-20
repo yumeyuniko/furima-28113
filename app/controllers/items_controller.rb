@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
     @item.update(item_params)
     if @item.valid?
       @item.save
-      redirect_to item_path
+      redirect_to item_path, notice: "編集しました"
     else
       render :edit
     end
