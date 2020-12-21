@@ -72,7 +72,7 @@
 
 
 
-##① usersテーブル
+## ① usersテーブル
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
