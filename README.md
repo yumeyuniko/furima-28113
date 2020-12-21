@@ -1,5 +1,5 @@
 
-<h1 align="center"> Furimaアプリ</h1>
+<h1 align="center"> Manecari</h1>
 
 - メルカリクローンのフリーマーケットサイト
 
@@ -22,22 +22,35 @@
 
 
 ## ■ Function
+* FacebookとGoogleのSNSアカウントを使ってログインできる
+* 外部のストレージサービスS3を使って画像の保存ができる
+* ユーザは出品商品に対してコメントができ、削除ができる
+* 新規商品出品の際、画像のプレビューができる
+* 新規商品出品の際にタグ付けができる
+* パンくずリスト設置
+* 商品編集・削除後メッセージが表示される
+* ログイン・ログアウト時にメッセージが表示される
+* ユーザはお問合せフォームからお問合せができる
+* フォームの入力不備があれば、日本語でエラーメッセージ が表示される
 
-* credit-card registration(PayJP)
+* ファビコン設定で、ブラウザのタブにアイコンが表示される
+* スマホのホーム画面にサイトのショートカットアイコンを表示
+
+
 
 
 ## ■ Language
 ### server-side
 * Ruby 2.6.5
-* 
-### front-end
+  
+
 
 
 ## ■ Flamework
 * Ruby on Rails 6.0.0
 
 ## ■ Database
-* MySQL 5.6.50
+* 5.5.68-MariaDB
 
 ## ■ Infrastructure
 * AWS EC2
@@ -59,12 +72,12 @@
 
 
 
-## usersテーブル
+##① usersテーブル
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
 | nickname | string | null:false |
-| email | string | null:false　unique:true |
+| email | string | null:false unique:true |
 | encrypted_password | string | null:false |
 | first_name | string | null:false |
 | last_name | string | null:false |
@@ -76,11 +89,12 @@
  - has_many :items
  - has_many :records
  - has_many :sns_credentials
+ - has_many :comments
    
 
 
 
-## itemsテーブル
+## ②itemsテーブル
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
@@ -97,10 +111,13 @@
  ### Association
  - belongs_to :user
  - has_one :record
+ - has_many :item_tag_relations
+ - has_many :comments
+ - has_many :tags
 
 
 
-## delivery_destinationsテーブル
+## ③delivery_destinationsテーブル
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
@@ -118,7 +135,7 @@
 
 
 
-## recordsテーブル
+## ④recordsテーブル
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
@@ -131,15 +148,60 @@
 - has_one :delivery_destination
      
 
-## sns_credentialsテーブル
+## ⑤sns_credentialsテーブル
 
 | Column | Type | Options |
 | :--- | :---: | ---: |
 | user | references |  foreign_key: true |
-| provider |  |  |
-| uid |  |  |
+| provider | string |  |
+| uid | string |  |
 
 
 ### Association
-- belongs_to :user
+- belongs_to :user  
 
+
+
+
+
+## ⑥commentsテーブル
+
+| Column | Type | Options |
+| :--- | :---: | ---: |
+| text | text |   |
+| user | references |  null:false, foreign_key: true |
+| item | references |  null:false, foreign_key: true |
+
+
+### Association
+-   belongs_to :item 
+-   belongs_to :user 
+
+
+
+
+
+## ⑦item_tag_relationsテーブル
+
+| Column | Type | Options |
+| :--- | :---: | ---: |
+| tag_name | string |  null:false, uniqueness: true |
+
+
+### Association
+- belongs_to :item
+- belongs_to :tag
+  
+
+
+## ⑧tagsテーブル
+
+| Column | Type | Options |
+| :--- | :---: | ---: |
+| item | references |  foreign_key: true |
+| tag | references |  foreign_key: true |
+
+
+### Association
+-  has_many :item_tag_relations
+-  has_many :items
