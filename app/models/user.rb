@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :sns_credentials, dependent: :destroy
   has_many :comments, dependent: :destroy  # commentsテーブルとのアソシエーション
-  has_many :records
+  has_many :records, dependent: :destroy
 
   
   validates :nickname, presence: true
