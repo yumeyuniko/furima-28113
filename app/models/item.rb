@@ -4,7 +4,7 @@ class Item < ApplicationRecord
     has_one :record
     has_many :item_tag_relations,dependent: :destroy
 
-    has_many :tags, through: :item_tag_relations,dependent: :destroy
+    has_many :tags, through: :item_tag_relations #,dependent: :destroy  tagを残すため
 
 
     extend ActiveHash::Associations::ActiveRecordExtensions
