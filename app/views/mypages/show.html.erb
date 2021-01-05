@@ -21,8 +21,8 @@
   </div>
   <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
 
-    <%# 商品一覧 %>
 
+    <%# 商品一覧 %>
   <div class='item-contents'>
     <h2 class='title'>出品中の商品一覧</h2>
     <%= link_to '新規投稿商品', items_path, class: "subtitle" %>
@@ -93,11 +93,14 @@
   <div class='item-contents'>
     <h2 class='subtitle'>売却済商品一覧</h2>
     
-    <ul class='item-lists'>  
+    <ul class='item-lists'>
       <% @records.each do |record| %>
-      <li class='list'>
-      </li>
+        <li class='list'>
+        <%=  record.name %>
+        <%= image_tag record.image, class: "item-img" if record.image.attached? %>
+        </li>
       <% end %> 
+    </ul>
   <%# /売却済商品一覧 %>
 
   <div class='item-contents'>

@@ -12,7 +12,7 @@
 <a><img src="images/../app/assets/images/rails.png" width="200px;" /></a> <!-- railsロゴ -->
 
 <br>
-## :grapes: インストール方法
+:grapes: インストール方法
 1.このリポジトリを複製<br>
 `$ git clone https://github.com/yumeyuniko/furima-28113.git`
 
@@ -26,7 +26,7 @@
 
 4.DBの作成&反映<br>
 `$ rails db:create`<br>
-`$ rails db:migrate`<br>
+`$ rails db:seed`<br>
 
 
 5.アプリケーションの起動<br>
