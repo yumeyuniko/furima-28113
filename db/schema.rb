@@ -44,12 +44,12 @@ ActiveRecord::Schema.define(version: 2020_12_05_044655) do
   end
 
   create_table "delivery_destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postal_code", null: false
+    t.string "postal_code", default: "", null: false
     t.integer "prefecture_id", null: false
-    t.string "city", null: false
-    t.string "house_number", null: false
+    t.string "city", default: "", null: false
+    t.string "house_number", default: "", null: false
     t.string "building_name"
-    t.string "phone_number", null: false
+    t.string "phone_number", default: "", null: false
     t.bigint "record_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -128,8 +128,6 @@ ActiveRecord::Schema.define(version: 2020_12_05_044655) do
   add_foreign_key "delivery_destinations", "records"
   add_foreign_key "item_tag_relations", "items"
   add_foreign_key "item_tag_relations", "tags"
-  add_foreign_key "items", "users"
-  add_foreign_key "records", "items"
   add_foreign_key "records", "users"
   add_foreign_key "sns_credentials", "users"
 end

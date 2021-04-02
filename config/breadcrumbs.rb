@@ -22,5 +22,5 @@ end
 
 crumb :contacts do
   link "お問合せ", contacts_index_path
-  parent :items
+  parent :root
 end

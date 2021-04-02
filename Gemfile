@@ -49,6 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
+  gem 'annotate'
 end
 
 group :test do
@@ -67,7 +68,7 @@ group :production do
 end
 
 gem 'pry-rails'
-gem 'devise'
+gem "devise", git: "https://github.com/heartcombo/devise"
 gem 'active_hash'
 gem 'mini_magick'
 gem 'payjp'
@@ -79,4 +80,7 @@ gem "omniauth-rails_csrf_protection"
 
 gem 'rails-i18n'
 gem "gretel"
+
 gem 'dotenv-rails'
+gem 'seed-fu'
+

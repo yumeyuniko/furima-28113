@@ -12,7 +12,7 @@
 <a><img src="images/../app/assets/images/rails.png" width="200px;" /></a> <!-- railsロゴ -->
 
 <br>
-## :grapes: インストール方法
+:grapes: インストール方法
 1.このリポジトリを複製<br>
 `$ git clone https://github.com/yumeyuniko/furima-28113.git`
 
@@ -26,7 +26,11 @@
 
 4.DBの作成&反映<br>
 `$ rails db:create`<br>
+<<<<<<< HEAD
 `$ rails db:migrate`<br>
+=======
+`$ rails db:seed`<br>
+>>>>>>> マイページ
 
 
 5.アプリケーションの起動<br>
@@ -80,29 +84,29 @@
 * automated deployment by capistrano
 
 
-|入力内容 | 備考 | 
-| :--- | :---: | 
-| フリマアプリのURL | http://52.196.164.12/ | 
-| Basic認証のIDとパスワード| ID:admin  / password:2222 | 
-| 出品者用のメールアドレスとパスワード| :e-mail: sample@gmail.com   :key:111aaa | 
-| 購入者用のメールアドレスとパスワード| :e-mail: sample1@gmail.com   :key:111aaa | 
-|購入用カードの番号・期限・セキュリティコード| カード番号 :4242424242424242 |  
-|セキュリティコード|CVC: 123|  
-|有効期限|登録時より未来|  
+| 入力内容                                     |                   備考                   |
+| :------------------------------------------- | :--------------------------------------: |
+| フリマアプリのURL                            |          http://52.196.164.12/           |
+| Basic認証のIDとパスワード                    |        ID:admin  / password:2222         |
+| 出品者用のメールアドレスとパスワード         | :e-mail: sample@gmail.com   :key:111aaa  |
+| 購入者用のメールアドレスとパスワード         | :e-mail: sample1@gmail.com   :key:111aaa |
+| 購入用カードの番号・期限・セキュリティコード |       カード番号 :4242424242424242       |
+| セキュリティコード                           |                 CVC: 123                 |
+| 有効期限                                     |              登録時より未来              |
 
 
 ## ① usersテーブル
 
-| Column | Type | Options |
-| :--- | :---: | ---: |
-| nickname | string | null:false |
-| email | string | null:false unique:true |
-| encrypted_password | string | null:false |
-| first_name | string | null:false |
-| last_name | string | null:false |
-| first_name_kana | string | null:false |
-| last_name_kana | string | null:false |
-| birthday | date| null:false |
+| Column             |  Type  |                Options |
+| :----------------- | :----: | ---------------------: |
+| nickname           | string |             null:false |
+| email              | string | null:false unique:true |
+| encrypted_password | string |             null:false |
+| first_name         | string |             null:false |
+| last_name          | string |             null:false |
+| first_name_kana    | string |             null:false |
+| last_name_kana     | string |             null:false |
+| birthday           |  date  |             null:false |
 
 ### Association
  - has_many :items
@@ -115,17 +119,17 @@
 
 ## ②itemsテーブル
 
-| Column | Type | Options |
-| :--- | :---: | ---: |
-| user | references | null: false, foreign_key: true |
-| name | string | null:false |
-| explanation | text | null:false |
-| category_id | integer | null:false |
-| condition_id | integer | null:false |
-| delivery_fee_id | integer | null:false |
-| prefecture_id | integer | null:false |
-| shipping_day_id | integer | null:false |
-| price | integer | null:false |
+| Column          |    Type    |                        Options |
+| :-------------- | :--------: | -----------------------------: |
+| user            | references | null: false, foreign_key: true |
+| name            |   string   |                     null:false |
+| explanation     |    text    |                     null:false |
+| category_id     |  integer   |                     null:false |
+| condition_id    |  integer   |                     null:false |
+| delivery_fee_id |  integer   |                     null:false |
+| prefecture_id   |  integer   |                     null:false |
+| shipping_day_id |  integer   |                     null:false |
+| price           |  integer   |                     null:false |
 
  ### Association
  - belongs_to :user
@@ -138,15 +142,15 @@
 
 ## ③delivery_destinationsテーブル
 
-| Column | Type | Options |
-| :--- | :---: | ---: |
-| postal_code | string | null:false |
-| prefecture_id | integer | null:false |
-| city | string | null:false |
-| house_number | string | null:false |
-| building_name | string |  |
-| phone_number | string | null:false |
-| record | references | null: false, foreign_key: true |
+| Column        |    Type    |                        Options |
+| :------------ | :--------: | -----------------------------: |
+| postal_code   |   string   |                     null:false |
+| prefecture_id |  integer   |                     null:false |
+| city          |   string   |                     null:false |
+| house_number  |   string   |                     null:false |
+| building_name |   string   |                                |
+| phone_number  |   string   |                     null:false |
+| record        | references | null: false, foreign_key: true |
  ### Association
 - belongs_to :record
      
@@ -156,10 +160,10 @@
 
 ## ④recordsテーブル
 
-| Column | Type | Options |
-| :--- | :---: | ---: |
-| user | references |  null: false, foreign_key: true |
-| item | references |  null: false, foreign_key: true |
+| Column |    Type    |                        Options |
+| :----- | :--------: | -----------------------------: |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -169,11 +173,11 @@
 
 ## ⑤sns_credentialsテーブル
 
-| Column | Type | Options |
-| :--- | :---: | ---: |
-| user | references |  foreign_key: true |
-| provider | string |  |
-| uid | string |  |
+| Column   |    Type    |           Options |
+| :------- | :--------: | ----------------: |
+| user     | references | foreign_key: true |
+| provider |   string   |                   |
+| uid      |   string   |                   |
 
 
 ### Association
@@ -185,11 +189,11 @@
 
 ## ⑥commentsテーブル
 
-| Column | Type | Options |
-| :--- | :---: | ---: |
-| text | text |   |
-| user | references |  null:false, foreign_key: true |
-| item | references |  null:false, foreign_key: true |
+| Column |    Type    |                       Options |
+| :----- | :--------: | ----------------------------: |
+| text   |    text    |                               |
+| user   | references | null:false, foreign_key: true |
+| item   | references | null:false, foreign_key: true |
 
 
 ### Association
@@ -202,9 +206,9 @@
 
 ## ⑦item_tag_relationsテーブル
 
-| Column | Type | Options |
-| :--- | :---: | ---: |
-| tag_name | string |  null:false, uniqueness: true |
+| Column   |  Type  |                      Options |
+| :------- | :----: | ---------------------------: |
+| tag_name | string | null:false, uniqueness: true |
 
 
 ### Association
@@ -215,10 +219,10 @@
 
 ## ⑧tagsテーブル
 
-| Column | Type | Options |
-| :--- | :---: | ---: |
-| item | references |  foreign_key: true |
-| tag | references |  foreign_key: true |
+| Column |    Type    |           Options |
+| :----- | :--------: | ----------------: |
+| item   | references | foreign_key: true |
+| tag    | references | foreign_key: true |
 
 
 ### Association
