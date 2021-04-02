@@ -11,12 +11,13 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.includes(:user).find(params[:id])
     @comment.destroy if current_user.id == @comment.user.id
-    redirect_to item_path(params[:item_id]), notice: "削除しました"
+
+    redirect_to item_path(params[:item_id]), notice: '削除しました'
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 end
-

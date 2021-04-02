@@ -68,7 +68,7 @@ group :production do
 end
 
 gem 'pry-rails'
-gem 'devise'
+gem "devise", git: "https://github.com/heartcombo/devise"
 gem 'active_hash'
 gem 'mini_magick'
 gem 'payjp'
